@@ -1,4 +1,4 @@
-package com.example.apiquiznavigation
+package com.example.apiquiznavigation.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
+import com.example.apiquiznavigation.R
 
 
 class FragmentEndPage : Fragment() {

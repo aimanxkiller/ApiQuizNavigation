@@ -1,14 +1,21 @@
-package com.example.apiquiznavigation
+package com.example.apiquiznavigation.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.renderscript.ScriptGroup.Binding
+import android.util.Log
+import androidx.activity.viewModels
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.apiquiznavigation.R
 import com.example.apiquiznavigation.databinding.ActivityMainBinding
+import com.example.apiquiznavigation.viewmodel.ViewModelQuestions
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
+import retrofit2.awaitResponse
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -20,7 +27,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.main_fragment_view) as NavHostFragment
-
         navController = navHostFragment.navController
 
     }

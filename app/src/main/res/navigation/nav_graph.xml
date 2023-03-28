@@ -6,7 +6,7 @@
     app:startDestination="@id/fragmentSelection">
     <fragment
         android:id="@+id/fragmentEndPage"
-        android:name="com.example.apiquiznavigation.FragmentEndPage"
+        android:name="com.example.apiquiznavigation.fragments.FragmentEndPage"
         android:label="fragment_end_page"
         tools:layout="@layout/fragment_end_page" >
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentSelection"
-        android:name="com.example.apiquiznavigation.FragmentSelection"
+        android:name="com.example.apiquiznavigation.fragments.FragmentSelection"
         android:label="fragment_selection"
         tools:layout="@layout/fragment_selection" >
         <action
@@ -24,7 +24,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentMidPage"
-        android:name="com.example.apiquiznavigation.FragmentMidPage"
+        android:name="com.example.apiquiznavigation.fragments.FragmentMidPage"
         android:label="fragment_mid_page"
         tools:layout="@layout/fragment_mid_page" >
         <action

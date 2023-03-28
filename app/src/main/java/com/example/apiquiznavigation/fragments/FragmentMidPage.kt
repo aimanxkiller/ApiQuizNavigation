@@ -1,4 +1,4 @@
-package com.example.apiquiznavigation
+package com.example.apiquiznavigation.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
+import androidx.viewpager2.widget.ViewPager2
+import com.example.apiquiznavigation.R
 
 
 class FragmentMidPage : Fragment() {
@@ -20,12 +22,8 @@ class FragmentMidPage : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val buttonRight = view.findViewById<Button>(R.id.buttonFragRight)
-        val buttonLeft = view.findViewById<Button>(R.id.buttonFragLeft)
+        val pager: ViewPager2 = view.findViewById(R.id.view_pager2_fragment)
 
-        buttonRight.setOnClickListener {
-            findNavController().navigate(R.id.action_fragmentMidPage_to_fragmentEndPage)
-        }
 
     }
 }

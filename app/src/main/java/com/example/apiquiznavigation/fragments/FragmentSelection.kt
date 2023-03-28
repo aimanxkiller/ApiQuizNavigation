@@ -6,17 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.apiquiznavigation.R
 import com.example.apiquiznavigation.models.QuizCat
 import com.example.apiquiznavigation.viewmodel.ViewModelQuestions
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.awaitResponse
 
@@ -25,8 +23,7 @@ import retrofit2.awaitResponse
 class FragmentSelection : Fragment() {
 
     private lateinit var spinner:Spinner
-    private var selection:String? = null
-    private lateinit var viewModel:ViewModelQuestions
+    private val viewModel:ViewModelQuestions by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -35,9 +32,11 @@ class FragmentSelection : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val viewModel = ViewModelProvider(requireActivity())[ViewModelQuestions::class.java]
         val buttonStart = view.findViewById<Button>(R.id.buttonStart)
         spinner = view.findViewById(R.id.dropdownList)
+
+        viewModel.countQ = 0
+        viewModel.scoreQ = 0
 
         lifecycleScope.launch {
             val x = viewModel.getCategories().awaitResponse()
@@ -58,7 +57,11 @@ class FragmentSelection : Fragment() {
         }
 
         buttonStart.setOnClickListener {
-            findNavController().navigate(R.id.action_fragmentSelection_to_fragmentMidPage)
+            if(viewModel.selection != null) {
+                findNavController().navigate(R.id.action_fragmentSelection_to_fragmentMidPage)
+            }else{
+                Toast.makeText(requireContext(),"Please select a category",Toast.LENGTH_SHORT).show()
+            }
         }
 
     }
@@ -78,7 +81,8 @@ class FragmentSelection : Fragment() {
                 id: Long
             ) {
                 val y = categoryY[position].split(",")
-                selection = y[0]
+                Log.e("Test",y[0])
+                viewModel.setPick(y[0])
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }

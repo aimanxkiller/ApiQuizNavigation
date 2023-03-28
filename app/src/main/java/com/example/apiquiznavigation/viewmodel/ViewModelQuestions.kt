@@ -18,21 +18,23 @@ class ViewModelQuestions @Inject constructor(
     private val api:QuestionApi
 ):ViewModel() {
 
-    val categories: QuizCat? = null
+    var countQ: Int? = null
+    var scoreQ: Int? = null
+    var selection:String? = null
 
-    init {
-        viewModelScope.launch {
-            val categories = api.getCategories().awaitResponse().body()
-        }
-    }
-
-
-    suspend fun getQuestions(selection:String): Response<List<QuestionModelItem>> {
-        return api.getQuestionCat(selection)
+    suspend fun getQuestions(): Response<List<QuestionModelItem>> {
+        return api.getQuestionCat(this.selection!!)
     }
 
     fun getCategories(): Call<QuizCat> {
         return api.getCategories()
     }
 
+    fun setPick(x:String){
+        this.selection = x
+    }
+
+    fun getPick(): String? {
+        return selection
+    }
 }

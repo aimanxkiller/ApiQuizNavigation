@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.FragmentQuestions">
+
+    <TextView
+        android:id="@+id/textQuestion2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:justificationMode="inter_word"
+        android:paddingHorizontal="25dp"
+        android:paddingBottom="20dp"
+        android:layout_above="@+id/radioGroup2"
+        android:text="Question Here"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_marginHorizontal="25dp"
+        android:paddingHorizontal="25dp">
+
+        <RadioButton
+            android:id="@+id/radioOne2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:justificationMode="inter_word"
+            android:text="One" />
+
+        <RadioButton
+            android:id="@+id/radioTwo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:justificationMode="inter_word"
+            android:text="Two" />
+
+        <RadioButton
+            android:id="@+id/radioThree2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:justificationMode="inter_word"
+            android:text="Three" />
+
+        <RadioButton
+            android:id="@+id/radioFour2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:justificationMode="inter_word"
+            android:text="Four" />
+
+    </RadioGroup>
+
+    <Button
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/buttonFragLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioGroup2"
+        android:layout_alignParentStart="true"
+        android:text="ButtonFrag" />
+    <Button
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="25dp"
+        android:id="@+id/buttonFragRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioGroup2"
+        android:layout_alignParentEnd="true"
+        android:text="ButtonFrag2" />
+
+</RelativeLayout>

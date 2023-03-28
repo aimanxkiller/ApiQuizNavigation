@@ -51,7 +51,7 @@ class FragmentMidPage : Fragment(),FragmentCommunicator {
             val x = async {
                 return@async viewModel.getQuestions().body()!!
             }
-            val adapter = MyAdapterFragment(this@FragmentMidPage,x.await())
+            val adapter = MyAdapterFragment(requireContext() as AppCompatActivity,x.await())
             pager.adapter = adapter
         }
 

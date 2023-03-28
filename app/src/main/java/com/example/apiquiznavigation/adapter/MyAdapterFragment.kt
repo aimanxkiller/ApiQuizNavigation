@@ -8,9 +8,9 @@ import com.example.apiquiznavigation.fragments.FragmentQuestions
 import com.example.apiquiznavigation.models.QuestionModelItem
 
 class MyAdapterFragment(
-    fragment:Fragment,
+    activity: AppCompatActivity,
     private val list: List<QuestionModelItem>
-): FragmentStateAdapter(fragment){
+): FragmentStateAdapter(activity){
 
     override fun getItemCount(): Int {
         return list.size

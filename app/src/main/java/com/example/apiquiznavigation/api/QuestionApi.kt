@@ -1,7 +1,6 @@
 package com.example.apiquiznavigation.api
 
 import com.example.apiquiznavigation.models.QuestionModelItem
-import com.example.apiquiznavigation.models.QuizCat
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.GET
@@ -19,6 +18,6 @@ interface QuestionApi {
     ): Response<List<QuestionModelItem>>
 
     @GET("categories")
-    fun getCategories(): Call<QuizCat>
+    fun getCategories(): Call<Map<String,ArrayList<String>>>
 
 }

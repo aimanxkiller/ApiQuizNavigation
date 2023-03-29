@@ -3,7 +3,6 @@ package com.example.apiquiznavigation.viewmodel
 import androidx.lifecycle.ViewModel
 import com.example.apiquiznavigation.api.QuestionApi
 import com.example.apiquiznavigation.models.QuestionModelItem
-import com.example.apiquiznavigation.models.QuizCat
 import dagger.hilt.android.lifecycle.HiltViewModel
 import retrofit2.Call
 import retrofit2.Response
@@ -22,7 +21,7 @@ class ViewModelQuestions @Inject constructor(
         return api.getQuestionCat(this.selection!!)
     }
 
-    fun getCategories(): Call<QuizCat> {
+    fun getCategories(): Call<Map<String,ArrayList<String>>> {
         return api.getCategories()
     }
 

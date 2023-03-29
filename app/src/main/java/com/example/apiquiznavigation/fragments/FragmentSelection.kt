@@ -10,10 +10,10 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.apiquiznavigation.R
-import com.example.apiquiznavigation.models.QuizCat
 import com.example.apiquiznavigation.viewmodel.ViewModelQuestions
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import retrofit2.await
 import retrofit2.awaitResponse
 
 @AndroidEntryPoint
@@ -33,12 +33,8 @@ class FragmentSelection : Fragment() {
         spinner = view.findViewById(R.id.dropdownList)
 
         lifecycleScope.launch {
-            val x = viewModel.getCategories().awaitResponse()
-            if(x.isSuccessful){
-                spinnerFiller(x.body()!!)
-            }else{
-                Toast.makeText(requireContext(),"Network Issue",Toast.LENGTH_SHORT).show()
-            }
+            val response = viewModel.getCategories()
+            spinnerFiller(response.await())
         }
 
         buttonStart.setOnClickListener {
@@ -51,11 +47,14 @@ class FragmentSelection : Fragment() {
 
     }
 
-    private fun spinnerFiller(x:QuizCat){
-        val categoryY = x.getTitle()
-        val categoryX = x.getDetails()
+    private fun spinnerFiller(x: Map<String, ArrayList<String>>?){
+        val categories = arrayListOf<String>()
 
-        val arrayAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_spinner_dropdown_item,categoryX)
+        x!!.entries.forEach {
+            categories.add(it.key)
+        }
+
+        val arrayAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_spinner_dropdown_item,categories)
         spinner.adapter = arrayAdapter
 
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -65,8 +64,7 @@ class FragmentSelection : Fragment() {
                 position: Int,
                 id: Long
             ) {
-                val y = categoryY[position].split(",")
-                viewModel.setPick(y[0])
+                viewModel.setPick(x["${categories[position]}"]!![0])
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }

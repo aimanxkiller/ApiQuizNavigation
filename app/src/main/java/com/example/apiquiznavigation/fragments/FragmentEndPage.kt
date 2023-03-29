@@ -1,5 +1,6 @@
 package com.example.apiquiznavigation.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -26,12 +27,13 @@ class FragmentEndPage : Fragment() {
         return inflater.inflate(R.layout.fragment_end_page, container, false)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val buttonReset = view.findViewById<Button>(R.id.buttonReset)
         val textView = view.findViewById<TextView>(R.id.textView2)
 
         val myScore = viewModel.scoreQ!!.sum()
-        val score = myScore?.times(5)
+        val score = myScore.times(5)
 
         textView.text = ("Your final score is \n $score/25")
 

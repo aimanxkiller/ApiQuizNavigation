@@ -1,13 +1,11 @@
 package com.example.apiquiznavigation.adapter
 
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.adapter.FragmentViewHolder
 import com.example.apiquiznavigation.fragments.FragmentMidPage
 import com.example.apiquiznavigation.fragments.FragmentQuestions
 import com.example.apiquiznavigation.models.QuestionModelItem
-import com.example.apiquiznavigation.viewmodel.ViewModelQuestions
 
 
 class MyAdapterFragment(

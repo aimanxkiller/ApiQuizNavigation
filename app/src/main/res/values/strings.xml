@@ -2,4 +2,14 @@
     <string name="app_name">ApiQuizNavigation</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="question_here">Question Here</string>
+    <string name="one">One</string>
+    <string name="buttonFrag">ButtonFrag</string>
+    <string name="buttonFrag2">ButtonFrag2</string>
+    <string name="restart_quiz">Restart Quiz</string>
+    <string name="here_are_your_results">Here are your results</string>
+    <string name="textview">Textview</string>
+    <string name="question_here2">Question Here</string>
+    <string name="select_a_category">Select a category :</string>
+    <string name="start">Start</string>
 </resources>

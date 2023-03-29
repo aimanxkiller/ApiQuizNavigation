@@ -2,13 +2,10 @@ package com.example.apiquiznavigation.api
 
 import com.example.apiquiznavigation.models.QuestionModelItem
 import com.example.apiquiznavigation.models.QuizCat
-import dagger.hilt.android.lifecycle.HiltViewModel
 import retrofit2.Call
 import retrofit2.Response
-import retrofit2.Retrofit
 import retrofit2.http.GET
 import retrofit2.http.Query
-import javax.inject.Inject
 
 interface QuestionApi {
 

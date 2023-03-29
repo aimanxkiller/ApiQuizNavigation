@@ -15,7 +15,7 @@
         android:paddingHorizontal="25dp"
         android:paddingBottom="20dp"
         android:layout_above="@+id/radioGroup2"
-        android:text="Question Here"
+        android:text="@string/question_here"
         android:textColor="@color/black"
         android:textSize="20sp" />
 
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
             android:justificationMode="inter_word"
-            android:text="One" />
+            android:text="@string/one" />
 
         <RadioButton
             android:id="@+id/radioTwo2"
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
             android:justificationMode="inter_word"
-            android:text="Two" />
+            android:text="@string/one" />
 
         <RadioButton
             android:id="@+id/radioThree2"
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
             android:justificationMode="inter_word"
-            android:text="Three" />
+            android:text="@string/one" />
 
         <RadioButton
             android:id="@+id/radioFour2"
@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
             android:justificationMode="inter_word"
-            android:text="Four" />
+            android:text="@string/one" />
 
     </RadioGroup>
 
@@ -71,7 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/radioGroup2"
         android:layout_alignParentStart="true"
-        android:text="ButtonFrag" />
+        android:text="@string/buttonFrag" />
     <Button
         android:layout_marginTop="10dp"
         android:layout_marginEnd="25dp"
@@ -80,6 +80,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/radioGroup2"
         android:layout_alignParentEnd="true"
-        android:text="ButtonFrag2" />
+        android:text="@string/buttonFrag2" />
 
 </RelativeLayout>

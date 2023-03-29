@@ -1,19 +1,12 @@
 package com.example.apiquiznavigation.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import androidx.activity.viewModels
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.apiquiznavigation.R
 import com.example.apiquiznavigation.databinding.ActivityMainBinding
-import com.example.apiquiznavigation.viewmodel.ViewModelQuestions
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
-import retrofit2.awaitResponse
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {

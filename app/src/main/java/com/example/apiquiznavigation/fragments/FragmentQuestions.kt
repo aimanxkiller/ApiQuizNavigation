@@ -1,5 +1,6 @@
 package com.example.apiquiznavigation.fragments
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -30,16 +31,17 @@ class FragmentQuestions(list: List<QuestionModelItem>, position: Int, private va
     private var listA = list
     private var pos = position
 
-    lateinit var text: TextView
-    lateinit var radioGroup: RadioGroup
-    lateinit var radioButton: RadioButton
-    lateinit var buttonL: Button
-    lateinit var buttonR: Button
+    private lateinit var text: TextView
+    private lateinit var radioGroup: RadioGroup
+    private lateinit var radioButton: RadioButton
+    private lateinit var buttonL: Button
+    private lateinit var buttonR: Button
 
     private lateinit var answerCorrect:String
     private var score:Int =0
     private var count:Int =0
 
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -60,6 +62,7 @@ class FragmentQuestions(list: List<QuestionModelItem>, position: Int, private va
         return view
     }
 
+    @SuppressLint("SetTextI18n")
     private fun setButtons() {
         buttonR.text = "Next"
         buttonL.text = "Previous"

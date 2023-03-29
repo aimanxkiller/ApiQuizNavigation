@@ -18,8 +18,8 @@ class ViewModelQuestions @Inject constructor(
     private val api:QuestionApi
 ):ViewModel() {
 
-    var countQ: Int? = null
-    var scoreQ: Int? = null
+    var countQ: IntArray? = null
+    var scoreQ: IntArray? = null
     var selection:String? = null
 
     suspend fun getQuestions(): Response<List<QuestionModelItem>> {

@@ -16,13 +16,13 @@ interface FragmentCommunicator{
     fun onPagePass(page:Int)
 }
 
-class FragmentQuestions(list: List<QuestionModelItem>, position: Int) : Fragment() {
+class FragmentQuestions(list: List<QuestionModelItem>, position: Int, private val contextSend: FragmentMidPage) : Fragment() {
     private var listener: FragmentCommunicator? = null
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        if (context is FragmentCommunicator){
-            listener=context
+        if (contextSend is FragmentCommunicator){
+            listener=contextSend
         }else
             throw java.lang.ClassCastException("$context must implement FragmentCommunicator")
     }

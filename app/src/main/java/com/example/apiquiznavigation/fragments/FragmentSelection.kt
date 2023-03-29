@@ -35,9 +35,6 @@ class FragmentSelection : Fragment() {
         val buttonStart = view.findViewById<Button>(R.id.buttonStart)
         spinner = view.findViewById(R.id.dropdownList)
 
-        viewModel.countQ = 0
-        viewModel.scoreQ = 0
-
         lifecycleScope.launch {
             val x = viewModel.getCategories().awaitResponse()
             if(x.isSuccessful){
@@ -45,14 +42,6 @@ class FragmentSelection : Fragment() {
             }else{
                 Toast.makeText(requireContext(),"Network Issue",Toast.LENGTH_SHORT).show()
             }
-
-//            val b = viewModel.getQuestions("science")
-//            if(b.isSuccessful){
-//                val listA = b.body()!!
-//                listA.forEachIndexed { index, questionModelItem ->
-//                    Log.e("Q $index",listA[index].question)
-//                }
-//            }
 
         }
 
@@ -81,7 +70,6 @@ class FragmentSelection : Fragment() {
                 id: Long
             ) {
                 val y = categoryY[position].split(",")
-                Log.e("Test",y[0])
                 viewModel.setPick(y[0])
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {

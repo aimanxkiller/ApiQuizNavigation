@@ -19,6 +19,9 @@ data class QuizCat(
     @SerializedName("Society & Culture") val SocietyCulture: List<String>,
     @SerializedName("Sport & Leisure") val SportLeisure: List<String>
 ){
+
+    //Dynamic keys so need to handle appropriately
+
     fun getDetails(): MutableList<String> {
         if(count1==0){
             category.add(SportLeisure.toString())

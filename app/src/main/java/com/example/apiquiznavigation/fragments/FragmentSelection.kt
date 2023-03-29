@@ -16,7 +16,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import retrofit2.awaitResponse
 
-//https://www.youtube.com/watch?v=1_WHwXAjkN0
 @AndroidEntryPoint
 class FragmentSelection : Fragment() {
 
@@ -40,7 +39,6 @@ class FragmentSelection : Fragment() {
             }else{
                 Toast.makeText(requireContext(),"Network Issue",Toast.LENGTH_SHORT).show()
             }
-
         }
 
         buttonStart.setOnClickListener {

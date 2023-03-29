@@ -14,7 +14,6 @@ class MyAdapterFragment(
 ): FragmentStateAdapter(context as Fragment){
 
     override fun getItemCount(): Int {
-
         return list.size
     }
 

@@ -44,7 +44,6 @@ class FragmentMidPage : Fragment(),FragmentCommunicator {
             viewModel.scoreQ = IntArray(x.await().size)
             pager.adapter = adapter
         }
-
     }
 
     override fun onDataPass(score: Int, count: Int, position: Int) {
@@ -62,4 +61,5 @@ class FragmentMidPage : Fragment(),FragmentCommunicator {
             }
         }
     }
+
 }

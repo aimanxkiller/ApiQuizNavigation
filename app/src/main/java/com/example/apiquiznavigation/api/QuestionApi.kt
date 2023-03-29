@@ -13,12 +13,12 @@ interface QuestionApi {
         const val BASE_URL = "https://the-trivia-api.com/api/"
     }
 
-    @GET("https://the-trivia-api.com/api/questions?limit=5")
+    @GET("questions?limit=5")
     suspend fun getQuestionCat(
         @Query("categories") categories:String
     ): Response<List<QuestionModelItem>>
 
-    @GET("https://the-trivia-api.com/api/categories")
+    @GET("categories")
     fun getCategories(): Call<QuizCat>
 
 }

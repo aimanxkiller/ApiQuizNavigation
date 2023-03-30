@@ -33,8 +33,8 @@ class FragmentSelection : Fragment() {
         spinner = view.findViewById(R.id.dropdownList)
 
         lifecycleScope.launch {
-            val response = viewModel.getCategories()
-            spinnerFiller(response.await())
+            val response = viewModel.repoCategories()
+            spinnerFiller(response)
         }
 
         buttonStart.setOnClickListener {
@@ -64,7 +64,7 @@ class FragmentSelection : Fragment() {
                 position: Int,
                 id: Long
             ) {
-                viewModel.setPick(x["${categories[position]}"]!![0])
+                viewModel.setPick(x[categories[position]]!![0])
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }
